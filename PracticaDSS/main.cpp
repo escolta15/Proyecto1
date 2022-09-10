@@ -457,7 +457,10 @@ Person login(unsigned short int tries)
 /*Validators*/
 void validateName(char *text)
 {
-    for (int i = 0; i < strlen(text); i++)
+    char name[256];
+    strncpy(name, text, sizeof name);
+    name[sizeof name - 1] = 0;
+    for (int i = 0; i < strlen(name); i++)
     {
         if (isdigit(text[i]))
             throw i;
