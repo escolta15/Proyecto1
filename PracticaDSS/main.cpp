@@ -72,7 +72,7 @@ void getEmployees()
     {
         while (feof(fp) == 0)
         {
-            fscanf(fp, "%s\t%d\t%s\t%d\t%d\t%f\n", &emp[c].name, &emp[c].code, &emp[c].designation, &emp[c].exp, &emp[c].age, &emp[c].salary);
+            fscanf(fp, "%20s\t%d\t%20s\t%d\t%d\t%f\n", &emp[c].name, &emp[c].code, &emp[c].designation, &emp[c].exp, &emp[c].age, &emp[c].salary);
             c++;
         }
         num = c;
