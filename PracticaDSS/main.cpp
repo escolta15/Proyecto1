@@ -475,7 +475,7 @@ void validateCode(string code)
             throw 'x';
     };
     if (stoi(code) <= 0 || stoi(code) > 1000)
-        throw "length";
+        throw std::invalid_argument("Invalid length");
 };
 
 void validateAge(string age)
@@ -486,7 +486,7 @@ void validateAge(string age)
             throw 'x';
     };
     if (stoi(age) <= 15 || stoi(age) > 150)
-        throw "length";
+        throw std::invalid_argument("Invalid length");
 };
 
 void validateInteger(string number)
@@ -497,7 +497,7 @@ void validateInteger(string number)
             throw 'x';
     };
     if (stoi(number) < 0 || stoi(number) > 150)
-        throw "length";
+        throw std::invalid_argument("Invalid length");
 };
 
 void validateSalary(string salary)
@@ -508,7 +508,7 @@ void validateSalary(string salary)
             throw 'x';
     };
     if (stof(salary) < 0 || stof(salary) > 1000000000)
-        throw "length";
+        throw std::invalid_argument("Invalid length");
 };
 /*End validators*/
 
