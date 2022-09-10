@@ -72,7 +72,7 @@ void getEmployees()
     {
         while (feof(fp) == 0)
         {
-            fscanf(fp, "%20s\t%d\t%20s\t%d\t%d\t%f\n", &emp[c].name[20], &emp[c].code, &emp[c].designation, &emp[c].exp, &emp[c].age, &emp[c].salary);
+            fscanf(fp, "%20s\t%d\t%20s\t%d\t%d\t%f\n", &emp[c].name[20], &emp[c].code, &emp[c].designation[20], &emp[c].exp, &emp[c].age, &emp[c].salary);
             c++;
         }
         num = c;
@@ -580,27 +580,24 @@ int main()
         menuAdmin:
             system("cls");
             menuAdmin();
-            while (1)
+            cin >> option;
+            switch (option)
             {
-                cin >> option;
-                switch (option)
-                {
-                case 1:
-                    list();
-                    goto menuAdmin;
-                case 2:
-                    insert(person.getId());
-                    goto menuAdmin;
-                case 3:
-                    search();
-                    goto menuAdmin;
-                case 4:
-                    exit(0);
-                default:
-                    cin.clear();
-                    cin.ignore(INT_MAX, '\n');
-                    goto menuAdmin;
-                }
+            case 1:
+                list();
+                goto menuAdmin;
+            case 2:
+                insert(person.getId());
+                goto menuAdmin;
+            case 3:
+                search();
+                goto menuAdmin;
+            case 4:
+                exit(0);
+            default:
+                cin.clear();
+                cin.ignore(INT_MAX, '\n');
+                goto menuAdmin;
             }
         }
         else if (person.getRole() == 2)
@@ -608,21 +605,18 @@ int main()
         menu:
             system("cls");
             menu();
-            while (1)
+            cin >> option;
+            switch (option)
             {
-                cin >> option;
-                switch (option)
-                {
-                case 1:
-                    list();
-                    goto menu;
-                case 2:
-                    exit(0);
-                default:
-                    cin.clear();
-                    cin.ignore(INT_MAX, '\n');
-                    goto menu;
-                }
+            case 1:
+                list();
+                goto menu;
+            case 2:
+                exit(0);
+            default:
+                cin.clear();
+                cin.ignore(INT_MAX, '\n');
+                goto menu;
             }
         }
         else
