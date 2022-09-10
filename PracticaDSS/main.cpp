@@ -72,7 +72,7 @@ void getEmployees()
     {
         while (feof(fp) == 0)
         {
-            fscanf(fp, "%20s\t%d\t%20s\t%d\t%d\t%f\n", &emp[c].name, &emp[c].code, &emp[c].designation, &emp[c].exp, &emp[c].age, &emp[c].salary);
+            fscanf(fp, "%20s\t%d\t%20s\t%d\t%d\t%f\n", &emp[c].name[20], &emp[c].code, &emp[c].designation, &emp[c].exp, &emp[c].age, &emp[c].salary);
             c++;
         }
         num = c;
@@ -588,23 +588,18 @@ int main()
                 case 1:
                     list();
                     goto menuAdmin;
-                    break;
                 case 2:
                     insert(person.getId());
                     goto menuAdmin;
-                    break;
                 case 3:
                     search();
                     goto menuAdmin;
-                    break;
                 case 4:
                     exit(0);
-                    break;
                 default:
                     cin.clear();
                     cin.ignore(INT_MAX, '\n');
                     goto menuAdmin;
-                    break;
                 }
             }
         }
@@ -621,15 +616,12 @@ int main()
                 case 1:
                     list();
                     goto menu;
-                    break;
                 case 2:
                     exit(0);
-                    break;
                 default:
                     cin.clear();
                     cin.ignore(INT_MAX, '\n');
                     goto menu;
-                    break;
                 }
             }
         }
