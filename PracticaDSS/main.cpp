@@ -307,10 +307,10 @@ void insert(unsigned short int id)
         cin.ignore(INT_MAX, '\n');
         num -= 1;
     }
-    catch (const char *length)
+    catch (const std::invalid_argument &e)
     {
         gotoXY(10, height);
-        printf("Invalid length");
+        printf(e.what());
         num -= 1;
     }
     catch (int i)
@@ -463,7 +463,8 @@ void validateName(char *text)
             throw i;
     };
     if (strlen(text) == 0 || strlen(text) >= 20)
-        throw "length";
+        throw std::invalid_argument("Invalid length");
+    ;
 };
 
 void validateCode(string code)
