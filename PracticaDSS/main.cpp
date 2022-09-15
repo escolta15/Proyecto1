@@ -5,6 +5,7 @@
 #include <fstream>
 #include <windef.h>
 #include "sha256.h"
+#undef max
 #define max 50
 using namespace std;
 int num = 0;
